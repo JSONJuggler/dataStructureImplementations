@@ -119,4 +119,14 @@ class doublyLinkedList {
       return currentNode;
     }
   }
+  set(index, val) {
+    var foundNode = list.get(index);
+    if (!foundNode) {
+      return false;
+      // if a node is found at index, set update val
+    } else {
+      foundNode.val = val;
+      return true;
+    }
+  }
 }
