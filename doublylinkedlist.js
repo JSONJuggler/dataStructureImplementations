@@ -27,6 +27,21 @@ class doublyLinkedList {
       return this;
     }
   }
+  pop() {
+    var oldTail = this.tail;
+    if (!this.head) {
+      return;
+    } else if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+      this.length--;
+      return oldTail;
+    } else {
+      var previous = this.tail.prev;
+      previous.next = null;
+      this.tail = previous;
+      this.length--;
+      return oldTail;
+    }
+  }
 }
-
-var list = new doublyLinkedList();
