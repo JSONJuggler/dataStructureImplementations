@@ -37,11 +37,30 @@ class doublyLinkedList {
       this.length--;
       return oldTail;
     } else {
-      var previous = this.tail.prev;
-      previous.next = null;
-      this.tail = previous;
+      var newTail = this.tail.prev;
+      newTail.next = null;
+      this.tail = newTail;
+      oldTail.prev = null;
       this.length--;
       return oldTail;
+    }
+  }
+  shift() {
+    var oldHead = this.head;
+    if (!this.head) {
+      return;
+    } else if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+      this.length--;
+      return oldHead;
+    } else {
+      var newHead = oldHead.next;
+      newHead.prev = null;
+      this.head = newHead;
+      oldHead.next = null;
+      this.length--;
+      return oldHead;
     }
   }
 }
