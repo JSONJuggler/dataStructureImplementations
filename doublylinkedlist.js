@@ -1,4 +1,5 @@
 class Node {
+  // initialize a node with props below
   constructor(val) {
     this.val = val;
     this.next = null;
@@ -7,6 +8,7 @@ class Node {
 }
 
 class doublyLinkedList {
+  // initialize a singly linked list with props below
   constructor() {
     this.head = null;
     this.tail = null;
@@ -14,11 +16,15 @@ class doublyLinkedList {
   }
   push(val) {
     var newNode = new Node(val);
+    // if there is no head, set newNode as head and tail
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
       this.length++;
       return this;
+      // set next property of current tail to new node and
+      // prev property of new node to current tail and finally
+      // update tail to new node
     } else {
       this.tail.next = newNode;
       newNode.prev = this.tail;
@@ -31,11 +37,15 @@ class doublyLinkedList {
     var oldTail = this.tail;
     if (!this.head) {
       return;
+      // if length of list is 1, set head and tail of list
+      // as null
     } else if (this.length === 1) {
       this.head = null;
       this.tail = null;
       this.length--;
       return oldTail;
+      // store node before tail and set its next prop to null
+      // and then set the node before the current tail as the new tail
     } else {
       var newTail = this.tail.prev;
       newTail.next = null;
@@ -49,12 +59,14 @@ class doublyLinkedList {
     var oldHead = this.head;
     if (!this.head) {
       return;
+      // if there is only 1 node, remove it
     } else if (this.length === 1) {
       this.head = null;
       this.tail = null;
       this.length--;
       return oldHead;
     } else {
+      // remove the old head and make the next node the new head
       var newHead = oldHead.next;
       newHead.prev = null;
       this.head = newHead;
@@ -71,12 +83,40 @@ class doublyLinkedList {
       this.tail = newNode;
       this.length++;
       return this;
+      // make the new node the head
     } else {
       this.head = newNode;
       newNode.next = oldHead;
       oldHead.prev = newNode;
       this.length++;
       return this;
+    }
+  }
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return;
+    } else if (this.length - index <= index - 0) {
+      // loop from the end of list
+      var currentNode = this.tail;
+      // move up list and update currentNode while "index" of
+      // currentNode is not the same as index, will return
+      // currentNode when it's "index" is the same as index
+      for (var i = this.length - 1; i > index; i--) {
+        var prevNode = currentNode.prev;
+        currentNode = prevNode;
+      }
+      return currentNode;
+    } else {
+      // loop from the start of list
+      var currentNode = this.head;
+      // move down list and update currentNode while "index" of
+      // currentNode is not the same as index, will return
+      // currentNode when it's "index" is the same as index
+      for (var i = 0; i < index; i++) {
+        var nextNode = currentNode.next;
+        currentNode = nextNode;
+      }
+      return currentNode;
     }
   }
 }
