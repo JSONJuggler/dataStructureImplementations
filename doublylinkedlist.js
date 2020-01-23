@@ -123,10 +123,32 @@ class doublyLinkedList {
     var foundNode = list.get(index);
     if (!foundNode) {
       return false;
-      // if a node is found at index, set update val
+      // if a node is found a index, set update val
     } else {
       foundNode.val = val;
       return true;
     }
+  }
+  insert(index, val) {
+    // return false if index is out of range of list
+    if (index < 0 || index > this.length) {
+      return false;
+    } else if (index === 0) {
+      list.unshift(val);
+      return true;
+    } else if (index === this.length) {
+      list.push(val);
+      return true;
+      // insert node at index with correct prev and next props,
+      // update prev node next prop and update next node prev
+    } else var newPrev = list.get(index - 1);
+    var newNext = newPrev.next;
+    var newNode = new Node(val);
+    newPrev.next = newNode;
+    newNext.prev = newNode;
+    newNode.prev = newPrev;
+    newNode.next = newNext;
+    this.length++;
+    return true;
   }
 }
