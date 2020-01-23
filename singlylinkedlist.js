@@ -160,14 +160,8 @@ class SinglyLinkedList {
   }
 }
 
-var list = new SinglyLinkedList();
-list.push(13);
-list.push(27);
-list.push(32);
-list.push(71);
+// creates new emtpy singly linked list
+// var list = new SinglyLinkedList();
 
-// var first = new Node("hi");
-// first.next = new Node("there");
-// first.next.next = new Node("how");
-// first.next.next.next = new Node("are");
-// first.next.next.next.next = new Node("you");
+// creates new node with val property and null next property
+// var newNode = new Node(val)
