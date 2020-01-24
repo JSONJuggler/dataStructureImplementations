@@ -28,7 +28,7 @@ class SinglyLinkedList {
   }
   pop() {
     var current = this.head;
-    var newtail = current;
+    var newTail = current;
     if (!current) {
       return;
     } else if (this.length === 1) {
@@ -38,11 +38,11 @@ class SinglyLinkedList {
       return current;
     } else {
       while (current.next) {
-        newtail = current;
+        newTail = current;
         current = current.next;
       }
-      newtail.next = null;
-      this.tail = newtail;
+      newTail.next = null;
+      this.tail = newTail;
       this.length--;
       return current;
     }
