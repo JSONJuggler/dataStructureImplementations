@@ -151,4 +151,36 @@ class doublyLinkedList {
     this.length++;
     return true;
   }
+  remove(index) {
+    // return false if index is out of range of list
+    if (index < 0 || index > this.length) {
+      return false;
+    } else if (index === 0) {
+      list.shift();
+      return true;
+    } else if (index === this.length - 1) {
+      list.pop();
+      return true;
+      // remove node at index, update prev node next prop
+      // and update next node prev, and props of removed node
+    } else var currentNode = list.get(index);
+    var newNext = currentNode.next;
+    var newPrev = currentNode.prev;
+    currentNode.prev = null;
+    currentNode.next = null;
+    newPrev.next = newNext;
+    newNext.prev = newPrev;
+    this.length--;
+    return true;
+  }
 }
+
+// var list = new doublyLinkedList();
+// list.push(2);
+// list.push(4);
+// list.push(6);
+// list.push(8);
+// list.push(10);
+// list.push(12);
+// list.push(14);
+// list.push(16);
