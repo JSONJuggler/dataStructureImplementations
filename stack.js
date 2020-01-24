@@ -9,7 +9,7 @@ class Node {
   }
 }
 
-class SinglyLinkedList {
+class Stack {
   constructor() {
     this.start = null;
     this.end = null;
@@ -23,7 +23,7 @@ class SinglyLinkedList {
       this.start = null;
       this.end = null;
       this.size--;
-      return currentStart.val;
+      return currentStart;
     } else {
       this.start = currentStart.next;
       this.size--;
@@ -68,13 +68,8 @@ class SinglyLinkedList {
   }
 }
 
-// creates new emtpy singly linked list
-var list = new SinglyLinkedList();
-list.push(2);
-list.push(4);
-list.push(6);
-list.push(8);
-list.push(10);
-list.push(12);
-list.push(14);
-list.push(16);
+// creates new emtpy stack
+var stack = new Stack();
+stack.push(2);
+stack.push(4);
+stack.push(6);
