@@ -1,2 +1,2 @@
-# node repl
-then .load <filename>
+# using node's repl
+>node repl
