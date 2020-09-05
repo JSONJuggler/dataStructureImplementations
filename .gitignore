@@ -1,2 +1,10 @@
 practice/
+node_modules/
+.gitignore
+.next/
+*.log
 .vscode/
+.eslintrc.json
+*.swp
+*.swo
+*~
