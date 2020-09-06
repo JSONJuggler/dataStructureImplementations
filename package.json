@@ -1,0 +1,23 @@
+{
+  "name": "datastructureimplementations",
+  "version": "1.0.0",
+  "description": ">node repl",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSONJuggler/dataStructureImplementations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JSONJuggler/dataStructureImplementations/issues"
+  },
+  "homepage": "https://github.com/JSONJuggler/dataStructureImplementations#readme"
+}
