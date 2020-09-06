@@ -8,4 +8,8 @@ node_modules/
 *.swp
 *.swo
 *~
-index.js
+index.ts
+dist/
+build
+.cache
+exports
